@@ -37,4 +37,8 @@ export const Container = styled.div<ThemeProps>`
     text-transform: uppercase;
     font-size: 16px;
   }
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;

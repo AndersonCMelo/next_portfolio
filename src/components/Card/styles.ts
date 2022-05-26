@@ -18,15 +18,30 @@ export const Container = styled.div`
   position: relative;
 
   img {
-    max-height: 520px;
+    /* max-height: 520px; */
     max-height: 36vw;
     height: 100%;
-    /* height: auto; */
-    /* max-width: 440px; */
     width: auto;
-    /* width: 100vw; */
     border-radius: 16px;
     margin-left: auto;
+  }
+
+  @media (max-width: 1080px) {
+    width: 66%;
+
+    img {
+      max-height: 32vw;
+    }
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    margin-bottom: 140px;
+    padding-right: 0;
+
+    img {
+      max-height: 46vw;
+    }
   }
 `;
 
@@ -76,5 +91,43 @@ export const Infos = styled.div<ThemeProps>`
         : 'var(--secondary)'
       };
     font-size: 22px;
+  }
+
+  @media (max-width: 1080px) {
+    h3 {
+      font-size: 46px;
+    }
+
+    div {
+      span {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+
+    button {
+      margin-top: 60px;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    width: 70%;
+
+    h3 {
+      font-size: 32px;
+      line-height: 110%;
+      margin-bottom: 10px;
+    }
+
+    div {
+      flex-direction: column;
+      align-items: baseline;
+    }
+
+    button {
+      margin-top: 40px;
+      font-size: 18px;
+    }
   }
 `;

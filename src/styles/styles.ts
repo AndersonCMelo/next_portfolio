@@ -61,6 +61,38 @@ export const Content = styled.div<ThemeProps>`
   div.secondSection {
     margin-top: 260px;
   }
+
+  @media (max-width: 1080px) {
+    h1 {
+      font-size: 60px;
+    }
+    
+    p {
+      font-size: 20px;
+      width: 80%;
+    }
+
+    div.secondSection {
+      margin-top: 200px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    h1 {
+      font-size: 46px;
+      margin-bottom: 30px;
+      line-height: 120%;
+    }
+
+    p {
+      font-size: 18px;
+      width: 100%;
+    }
+
+    div.secondSection {
+      margin-top: 100px;
+    }
+  }
 `;
 
 export const ContactSection = styled.div<ThemeProps>`
@@ -105,5 +137,35 @@ export const ContactSection = styled.div<ThemeProps>`
         ? 'var(--primary)'
         : 'var(--secondary)'
       };
+  }
+
+  @media (max-width: 1080px) {
+    margin-top: 200px;
+    margin-bottom: 220px;
+
+    h2 {
+      font-size: 50px;
+      margin-bottom: 25px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    margin-top: 150px;
+    margin-bottom: 160px;
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 25px;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      div.point {
+        margin: 10px 10px;
+      }
+    }
   }
 `;

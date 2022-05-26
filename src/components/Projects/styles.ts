@@ -27,4 +27,23 @@ export const Container = styled.div<ThemeProps>`
         : 'var(--white)'
       };
   }
+
+  @media (max-width: 1080px) {
+    h2 {
+      width: 34%;
+      font-size: 50px;
+      margin-bottom: 70px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    margin-bottom: 80px;
+    
+    h2 {
+      font-size: 40px;
+      position: relative;
+      width: 100%;
+      margin-bottom: 120px;
+    }
+  }
 `;
