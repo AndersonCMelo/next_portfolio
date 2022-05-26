@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Deixa no Azul",
+    "techs": [
+      "ReactJs", "Styled components"
+    ],
+    "description": "Deixa no Azul’s web platform is aimed at authorized licensees and company administrative personnel. Through the Deixa no Azul’s web platform, it is possible to manage transactions carried out by accredited establishments.",
+    "language": "Javascript",
+    "framework": "ReactJs",
+    "libraries": [
+      "Styled components", "Axios", "React Dropzone", "React Context API"
+    ],
+    "link": null
+  },
+  {
+    "id": "2",
+    "name": "My Portfolio",
+    "techs": [
+      "NextJs", "Typescript", "Styled components"
+    ],
+    "description": "",
+    "language": "Typescript",
+    "framework": "NextJs",
+    "libraries": [
+      "Styled components", "React Icons"
+    ],
+    "link": null
+  },
+  {
+    "id": "3",
+    "name": "Deixa no Azul",
+    "techs": [
+      "React Native", "Styled components"
+    ],
+    "description": "Deixa no Azul’s mobile app is aimed at establishments. Through the Deixa no Azul’s mobile app, it is possible to carry out transactions and track their progress..",
+    "language": "Javascript",
+    "framework": "React Native",
+    "libraries": [
+      "Styled components", "Expo and Bare workflow", "Axios", "React Dropzone"
+    ],
+    "link": null
+  },
+  {
+    "id": "4",
+    "name": "Instituto Palate",
+    "techs": [
+      "ReactJs", "NodeJs", "Styled components"
+    ],
+    "description": "Design and Develope a medical records for Instituto Palate, a clinic specializing in cleft lip and palate.",
+    "language": "Javascript and Typescript",
+    "framework": "ReactJs and NodeJs",
+    "libraries": [
+      "Styled components", "Express", "Axios"
+    ],
+    "link": null
+  },
+  {
+    "id": "5",
+    "name": "Conta no Azul",
+    "techs": [
+      "HTML", "CSS", "Javascript"
+    ],
+    "description": "",
+    "language": "Javascript",
+    "framework": null,
+    "libraries": [],
+    "link": "https://conta-no-azul-andersonmelo.netlify.app/"
+  },
+  {
+    "id": "6",
+    "name": "Maria Ferreira Fisioterapeuta",
+    "techs": [
+      "HTML", "CSS", "Javascript"
+    ],
+    "description": "",
+    "language": "Javascript",
+    "framework": null,
+    "libraries": [],
+    "link": "https://www.mariaferreirafisio.com.br/"
+  }
+]
