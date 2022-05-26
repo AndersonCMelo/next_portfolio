@@ -14,7 +14,7 @@ import { ProjectDetails } from '../components/ProjectDetails';
 
 import { useTheme } from '../context/ThemeContext';
 
-import { Container, Content, ContactSection } from './styles';
+import { Container, Content, ContactSection } from '../styles/styles';
 
 export default function Home() {
   const { appTheme } = useTheme();
