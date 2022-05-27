@@ -4,7 +4,12 @@
 import Image from 'next/image';
 import styles from './styles.module.scss';
 
-import project1 from '../../../public/project01.jpg'
+import project1 from '../../../public/project1.jpg'
+import project2 from '../../../public/project2.jpg'
+import project3 from '../../../public/project3.jpg'
+import project4 from '../../../public/project4.jpg'
+import project5 from '../../../public/project5.jpg'
+import project6 from '../../../public/project6.jpg'
 import projectLabel from '../../../public/project_label.png'
 
 import { useProject } from '../../context/ProjectContext';
@@ -43,9 +48,34 @@ export function Card({ project }: Projects) {
       })
   }
 
+  function projectImage(project: ProjectProps) {
+    console.log('projet', project);
+    
+    if (project.id === '1') {
+      return project1;
+    }
+    if (project.id === '2') {
+      return project2;
+    }
+    if (project.id === '3') {
+      return project3;
+    }
+    if (project.id === '4') {
+      return project4;
+    }
+    if (project.id === '5') {
+      return project5;
+    }
+    if (project.id === '6') {
+      return project6;
+    }
+
+    return projectLabel;
+  }
+
   return (
     <Container>
-      <Image src={projectLabel} alt={project.name} />
+      <Image src={projectImage(project)} alt={project.name} />
 
       <Infos themeMode={appTheme}>
         <h3>{project.name}</h3>
