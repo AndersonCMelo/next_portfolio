@@ -12,12 +12,14 @@ export function ProjectDetails() {
 
   const { project, projectOpened, setProjectOpened } = useProject();
 
+  const stringLibraries = projectOpened && project.libraries.join(', ');
+
   return (
     <Container style={{ display: projectOpened ? 'flex' : 'none' }}>
       <Content themeMode={appTheme}>
         <button type='button' onClick={() => setProjectOpened(false)}><FiX /></button>
         <h3>{projectOpened ? project.name : ''}</h3>
-        <p>{projectOpened ? project.description : ''}</p>
+        <p className='description'>{projectOpened ? project.description : ''}</p>
 
         <Libraries themeMode={appTheme}>
           <div>
@@ -32,12 +34,9 @@ export function ProjectDetails() {
 
           <div style={{ display: projectOpened && project.libraries.length === 0 ? 'none' : 'flex' }}>
             <strong>Some libraries:</strong>
-            {projectOpened ? project.libraries.map(item => (
-              <span style={{ marginRight: 6 }} key={item}>
-                {item}
-                {project.libraries.indexOf(item) === project.libraries.length - 1 ? ', ...' : ', '}
-              </span>
-            )) : ''}
+            <span style={{ marginRight: 6 }}>
+              {projectOpened ? `${project.libraries.join(', ')}, ...` : ''}
+            </span>
           </div>
 
           {/* Link */}

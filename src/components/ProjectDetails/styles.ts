@@ -73,7 +73,7 @@ export const Content = styled.div<ThemeProps>`
       };
   }
 
-  p {
+  p.description {
     font-size: 22px;
     font-weight: 300;
     margin-top: 20px;
@@ -83,6 +83,43 @@ export const Content = styled.div<ThemeProps>`
         ? 'var(--light_type)'
         : 'var(--dark_type)'
       };
+  }
+
+  @media (max-width: 1080px) {
+    padding: 45px 35px;
+    
+    h3 {
+      font-size: 34px;
+    }
+    
+    p.description {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    padding: 40px 20px 30px;
+    width: 86%;
+    height: 86%;
+
+    overflow: scroll;
+
+    button {
+      top: 20px;
+      right: 20px;
+
+      height: 30px;
+      width: 30px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+    
+    p.description {
+      font-size: 18px;
+      margin-top: 10px;
+    }
   }
 `;
 
@@ -126,5 +163,41 @@ export const Libraries = styled.div<ThemeProps>`
         ? 'var(--primary)'
         : 'var(--secondary)'
       };
+  }
+
+  @media (max-width: 1080px) {
+    span {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    strong {
+      font-size: 20px;
+    }
+
+    div {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    margin-top: 30px;
+
+    span {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    strong {
+      font-size: 18px;
+    }
+
+    div {
+      a {
+        font-size: 18px;
+      }
+    }
   }
 `;
