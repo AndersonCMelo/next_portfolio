@@ -12,7 +12,8 @@ export function ProjectDetails() {
 
   const { project, projectOpened, setProjectOpened } = useProject();
 
-  const stringLibraries = projectOpened && project.libraries.join(', ');
+  console.log(project);
+  
 
   return (
     <Container style={{ display: projectOpened ? 'flex' : 'none' }}>
@@ -27,7 +28,7 @@ export function ProjectDetails() {
             <span>{projectOpened ? project.language : ''}</span>
           </div>
 
-          <div style={{ display: projectOpened && project.framework === null ? 'none' : 'flex' }}>
+          <div style={{ display: projectOpened && !project.framework ? 'none' : 'flex' }}>
             <strong>Framework:</strong>
             <span>{projectOpened ? project.framework : ''}</span>
           </div>
@@ -40,7 +41,7 @@ export function ProjectDetails() {
           </div>
 
           {/* Link */}
-          <div style={{ display: projectOpened && project.link === null ? 'none' : 'flex' }}>
+          <div style={{ display: projectOpened && !project.link ? 'none' : 'flex' }}>
             <strong>View project:</strong>
             <a href={projectOpened ? project.link : '/'} target="_blank" rel="noreferrer">Click here</a>
           </div>

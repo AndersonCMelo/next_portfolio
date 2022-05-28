@@ -17,11 +17,13 @@ export const Container = styled.div`
 
   position: relative;
 
-  img {
+  .image {
     /* max-height: 520px; */
+    position: relative;
     max-height: 36vw;
     height: 100%;
-    width: auto;
+    /* width: auto; */
+    width: 100%;
     border-radius: 16px;
     margin-left: auto;
   }
@@ -42,6 +44,30 @@ export const Container = styled.div`
     img {
       max-height: 46vw;
     }
+  }
+`;
+
+export const Img = styled.div`
+  position: relative;
+  max-height: 36vw;
+  height: 36vw;
+  /* width: auto; */
+  width: 31vw;
+  border-radius: 16px;
+  margin-left: auto;
+  
+  span {
+    border-radius: 16px;
+  }
+
+  @media (max-width: 1080px) {
+    height: 32vw;
+    width: 28vw;
+  }
+
+  @media (max-width: 720px) {
+    height: 46vw;
+    width: 34vw;
   }
 `;
 

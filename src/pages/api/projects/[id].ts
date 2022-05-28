@@ -1,11 +1,20 @@
+import { query as q } from 'faunadb';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import projects from '../../../../public/json/projects.json';
+import { fauna } from '../../../services/fauna';
 
-export default function handler(request: NextApiRequest, response: NextApiResponse) {
+export default async function handler(request: NextApiRequest, response: NextApiResponse) {
   const { id } = request.query;
 
-  const project = projects.filter(item => item.id === id);
+  const project = await fauna.query(
+    q.Get(q.Ref(q.Collection('projects'), id))
+  ).then(response => {
+    // console.log(response);
+    return response;
+  }).catch(err => {
+    // console.log('err', err);
+    return err;
+  })
 
-  return response.status(200).json(project[0]);
+  return response.status(200).json(project);
 }

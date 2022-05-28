@@ -2,7 +2,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 // import Link from 'next/link';
 import Image from 'next/image';
-import styles from './styles.module.scss';
+import { relative } from 'path';
+// import styles from './styles.module.scss';
 
 import project1 from '../../../public/project1.jpg'
 import project2 from '../../../public/project2.jpg'
@@ -15,10 +16,9 @@ import projectLabel from '../../../public/project_label.png'
 import { useProject } from '../../context/ProjectContext';
 import { useTheme } from '../../context/ThemeContext';
 
-import { Container, Infos } from './styles';
+import { Container, Img, Infos } from './styles';
 
-interface ProjectProps {
-  id?: string;
+interface DataProps {
   name?: string;
   techs?: Array<string>;
   description?: string;
@@ -26,11 +26,16 @@ interface ProjectProps {
   framework?: string;
   libraries?: Array<string>;
   link?: string | null;
+  image?: string;
+}
+
+interface ProjectProps {
+  data: DataProps;
+  ref: any;
 }
 
 interface Projects {
   project: ProjectProps;
-  // onOpen: Function;
 }
 
 export function Card({ project }: Projects) {
@@ -38,20 +43,21 @@ export function Card({ project }: Projects) {
 
   const { setProject, setProjectOpened } = useProject();
 
-  function open(id: string) {
+  function open(ref: ProjectProps) {
+    const id = ref["@ref"].id;
+    
     fetch(`/api/projects/${id}`)
       .then(response => response.json())
       .then(data => {
-        console.log('data: ', data);
-        setProject(data);
+        setProject(data.data);
         setProjectOpened(true);
       })
   }
 
   function projectImage(project: ProjectProps) {
-    console.log('projet', project);
+    // console.log('projet', project);
     
-    if (project.id === '1') {
+    /* if (project.id === '1') {
       return project1;
     }
     if (project.id === '2') {
@@ -68,26 +74,34 @@ export function Card({ project }: Projects) {
     }
     if (project.id === '6') {
       return project6;
-    }
+    } */
 
     return projectLabel;
   }
 
   return (
     <Container>
-      <Image src={projectImage(project)} alt={project.name} />
+      {/* <Image src={project.data.image} alt={project.data.name} /> */}
+      <Img>
+        <Image
+          src={project.data.image}
+          layout="fill"
+          objectFit="cover"
+          alt={project.data.name}
+        />
+      </Img>
 
       <Infos themeMode={appTheme}>
-        <h3>{project.name}</h3>
+        <h3>{project.data.name}</h3>
 
         <div>
-          {project.techs.map(tech => (
+          {project.data.techs.map(tech => (
             <span key={tech}>{tech}</span>
           ))}
         </div>
 
         <div>
-          <button type='button' onClick={() => open(project.id)}>
+          <button type='button' onClick={() => open(project.ref)}>
             View more
           </button>
         </div>

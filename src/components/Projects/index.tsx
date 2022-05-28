@@ -16,7 +16,9 @@ export function Projects() {
     fetch('/api/projects')
       .then(response => response.json())
       .then(data => {
-        setProjects(data);
+        // console.log(data.data);
+        
+        setProjects(data.data);
       })
   }, []);
 
@@ -25,7 +27,7 @@ export function Projects() {
       <h2>Works I did</h2>
 
       {projects.map(project => (
-        <Card project={project} key={project.id} />
+        <Card project={project} key={project.ref["@ref"].id} />
       ))}
     </Container>
   )
